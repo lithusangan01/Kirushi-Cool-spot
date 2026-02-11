@@ -199,7 +199,7 @@ body {
 
 .eats-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px;
 }
 
@@ -216,7 +216,7 @@ body {
 
 .eats-item img {
   width: 100%;
-  height: 200px;
+  height: 230px;
   object-fit: cover;
   border-radius: 12px;
 }
@@ -1384,7 +1384,7 @@ body::after {
 }
 
 .site-brand::after {
-  content: "Handcrafted scoops • Crafted with care";
+  content: "Handcrafted scoops Crafted with care";
   font-family: "DM Sans", "Segoe UI", sans-serif;
   font-size: 0.78rem;
   letter-spacing: 2px;
@@ -1781,4 +1781,178 @@ body.page-ready .eats-list > *:nth-child(9) {
 
 .page-loader.is-active span {
   width: 100%;
+}
+
+/* === Brown White Theme === */
+:root {
+  color-scheme: light;
+  --bg: #f7f3ef;
+  --bg-soft: #ffffff;
+  --card: #ffffff;
+  --ink: #2f2218;
+  --muted: #6b5b4f;
+  --accent: #8b5e3c;
+  --accent-2: #a7774c;
+  --accent-3: #c9a173;
+  --stroke: rgba(47, 34, 24, 0.12);
+  --shadow: 0 16px 30px rgba(47, 34, 24, 0.12);
+  --shadow-strong: 0 24px 45px rgba(47, 34, 24, 0.18);
+}
+
+body {
+  background:
+    radial-gradient(1200px 700px at 10% -10%, rgba(139, 94, 60, 0.16), transparent 60%),
+    radial-gradient(900px 600px at 90% 0%, rgba(167, 119, 76, 0.14), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #f7f3ef 45%, #efe6dc 100%);
+  color: var(--ink);
+}
+
+body::before {
+  opacity: 0.4;
+}
+
+body::after {
+  opacity: 0.2;
+}
+
+.site-inner {
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+}
+
+.site-footer .site-inner {
+  color: var(--muted);
+}
+
+.header-inner::after {
+  background: linear-gradient(90deg, var(--accent-2), var(--accent), var(--accent-3));
+}
+
+.site-brand {
+  color: var(--accent);
+}
+
+.pill-row a,
+.back-link {
+  background: #ffffff;
+  border: 1px solid rgba(139, 94, 60, 0.3);
+  color: var(--ink);
+  box-shadow: 0 10px 18px rgba(47, 34, 24, 0.12);
+}
+
+.pill-row a:hover,
+.back-link:hover {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.poster,
+.hero-card,
+.menu-card,
+.juice-item,
+.ice-card,
+.shake-card,
+.tea-card,
+.eats-item,
+.eats-section,
+.juice-header,
+.ice-hero,
+.shake-hero,
+.tea-hero,
+.eats-hero {
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+}
+
+.brand-panel {
+  background: #fff7ef;
+  border: 1px solid rgba(139, 94, 60, 0.2);
+  box-shadow: var(--shadow);
+}
+
+.menu-card::before {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.menu-card h2,
+.juice-info h3,
+.ice-info h3,
+.shake-info h3,
+.tea-info h3,
+.eats-info h3 {
+  color: var(--ink);
+}
+
+.menu-card p,
+.hero-copy,
+.tagline,
+.closing,
+.site-meta {
+  color: var(--muted);
+}
+
+.badge {
+  background: linear-gradient(135deg, var(--accent), var(--accent-3));
+  color: #ffffff;
+}
+
+.meta span {
+  background: rgba(139, 94, 60, 0.12);
+  border: 1px solid rgba(139, 94, 60, 0.28);
+  color: var(--accent);
+}
+
+.juice-info p,
+.ice-info p,
+.shake-info p,
+.tea-info p,
+.eats-info p,
+.price {
+  color: var(--accent-2);
+}
+
+.thumb-grid figure {
+  background: #ffffff;
+  border: 1px solid var(--stroke);
+  box-shadow: 0 12px 20px rgba(47, 34, 24, 0.12);
+}
+
+.thumb-grid figcaption {
+  color: var(--muted);
+}
+/* === Header Tagline Contrast === */
+.site-brand::after {
+  color: #6b3f1f;
+}
+/* === Active Nav State === */
+.pill-row a.is-active {
+  background: #2f2218;
+  color: #ffffff;
+  border-color: #2f2218;
+  box-shadow: 0 10px 18px rgba(47, 34, 24, 0.18);
+}
+
+.pill-row a.is-active:hover {
+  background: #2f2218;
+  color: #ffffff;
+}
+/* === Brand Panel Image Clarity === */
+.brand-panel::before {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  filter: none !important;
+}
+/* === Brand Panel Height === */
+.brand-panel {
+  min-height: 240px;
+}
+
+@media (max-width: 720px) {
+  .brand-panel {
+    min-height: 200px;
+  }
 }
